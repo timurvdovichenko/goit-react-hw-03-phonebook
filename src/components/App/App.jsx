@@ -1,8 +1,8 @@
 import { Component } from 'react';
-import ContactList from './ContactList';
-import ContactForm from './ContactForm';
+import ContactList from '../ContactList/ContactList';
+import ContactForm from '../ContactForm/ContactForm';
 import { H2Styled } from './App.styled';
-import Filter from './Filter';
+import Filter from '../Filter';
 
 const CL_KEY = 'contacts';
 

@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import { nanoid } from 'nanoid';
 import PropTypes from 'prop-types';
-import { Form, Label, Input, Button } from './Common.styled';
+import { Form, Label, Input, Button } from '../Common.styled';
 import { Span } from './ContactForm.styled';
 
 class ContactForm extends Component {
