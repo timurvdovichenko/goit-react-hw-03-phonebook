@@ -4,6 +4,8 @@ import ContactForm from './ContactForm';
 import { H2Styled } from './App.styled';
 import Filter from './Filter';
 
+const CL_KEY = 'contacts';
+
 class App extends Component {
   state = {
     contacts: [
@@ -14,6 +16,21 @@ class App extends Component {
     ],
     filter: '',
   };
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState !== this.state) {
+      const contactsLocalStorage = JSON.stringify(this.state.contacts);
+
+      localStorage.setItem(CL_KEY, contactsLocalStorage);
+    }
+  }
+
+  componentDidMount() {
+    const savedState = localStorage.getItem(CL_KEY);
+    if (savedState) {
+      this.setState({ contacts: JSON.parse(localStorage.getItem(CL_KEY)) });
+    }
+  }
 
   formSubmitHandler = data => {
     const { contacts } = this.state;
